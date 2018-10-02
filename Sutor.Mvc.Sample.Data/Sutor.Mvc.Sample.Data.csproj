@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Sutor.Mvc.Sample.Contracts\Sutor.Mvc.Sample.Contracts.csproj" />
+    <ProjectReference Include="..\Sutor.Mvc.Sample.Domain\Sutor.Mvc.Sample.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

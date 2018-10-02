@@ -1,0 +1,36 @@
+﻿@model UserPageViewModel
+@{
+    ViewData["Title"] = "Users";
+}
+
+<h2>Users</h2>
+@foreach (var user in Model.Users)
+{
+    <div>
+        <h5>@Html.DisplayFor(m => user.DisplayName)</h5>
+    </div>
+}
+
+<h2>Add New User</h2>
+<form asp-action="Add" asp-controller="User">
+    <div>
+        <label asp-for="NewUser.FirstName"></label>
+        <input asp-for="NewUser.FirstName" placeholder="Last Name" />
+        <span asp-validation-for="NewUser.FirstName" class="text-danger"></span>
+
+    </div>
+    <div>
+        <label asp-for="NewUser.LastName"></label>
+        <input asp-for="NewUser.LastName" placeholder="Last Name" />
+        <span asp-validation-for="NewUser.LastName" class="text-danger"></span>
+
+    </div>
+    <input type="submit" />
+</form>
+
+@*These would normally be added to the project via NuGet (so versions can be managed)
+    and delivered to the browser via JavaScript bundle but I consisdered that to be out of this demo's scope.*@
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.2.0.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.16.0/jquery.validate.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.6/jquery.validate.unobtrusive.min.js"></script>
